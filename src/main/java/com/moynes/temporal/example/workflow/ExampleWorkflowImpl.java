@@ -3,7 +3,6 @@ package com.moynes.temporal.example.workflow;
 import java.time.Duration;
 
 import com.moynes.temporal.example.activity.ExampleActivity;
-import com.moynes.temporal.example.activity.ExampleActivityImpl;
 
 import io.temporal.activity.ActivityOptions;
 import io.temporal.spring.boot.WorkflowImpl;

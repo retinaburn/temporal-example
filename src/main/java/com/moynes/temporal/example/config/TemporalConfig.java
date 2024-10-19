@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.moynes.temporal.example.activity.ExampleActivity;
 import com.moynes.temporal.example.activity.ExampleActivityImpl;
-import com.moynes.temporal.example.workflow.ExampleWorkflow;
 import com.moynes.temporal.example.workflow.ExampleWorkflowImpl;
 
 import io.temporal.client.WorkflowClient;

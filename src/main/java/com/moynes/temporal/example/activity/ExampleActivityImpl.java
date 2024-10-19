@@ -2,8 +2,6 @@ package com.moynes.temporal.example.activity;
 
 import java.util.UUID;
 
-import org.springframework.stereotype.Service;
-
 import io.temporal.spring.boot.ActivityImpl;
 import lombok.extern.slf4j.Slf4j;
 
