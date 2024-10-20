@@ -2,7 +2,6 @@ package com.moynes.temporal.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import com.moynes.temporal.example.workflow.ExampleWorkflow;
 
@@ -10,7 +9,7 @@ import io.temporal.client.WorkflowClient;
 import io.temporal.client.WorkflowOptions;
 import lombok.extern.slf4j.Slf4j;
 
-@Component
+//@Component
 @Slf4j
 public class Runner implements CommandLineRunner {
     @Autowired
