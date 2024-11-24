@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: WARN
+    com.moynes.temporal.example: DEBUG
+    org.apache.kafka: INFO
+
+topics:
+  input: ingest
+
+spring:
+  application:
+    name: example
+  kafka:
+    producer:
+      properties:
+        key.serializer: org.apache.kafka.common.serialization.StringSerializer
+        value.serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: example
+      properties:
+        spring.json.trusted.packages: com.moynes.temporal.example.model
+        key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value.deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      
+    bootstrap-servers: 127.0.0.1:19092
+    
+temporal:
+  namespace: default
+  connection:
+    target: 127.0.0.1:7233
+  workersAutoDiscovery:
+    packages: com.moynes.temporal.example
+

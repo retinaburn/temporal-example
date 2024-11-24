@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 
+import com.moynes.temporal.example.model.User;
+
 @Configuration
 public class ListenerConfig {
 
@@ -14,8 +16,8 @@ public class ListenerConfig {
     
 
     @Bean
-    ConcurrentKafkaListenerContainerFactory<String, String> factoryConfig() {
-        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    ConcurrentKafkaListenerContainerFactory<String, User> factoryConfig() {
+        ConcurrentKafkaListenerContainerFactory<String, User> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConcurrency(Integer.valueOf(concurrency));
         return factory;
     }

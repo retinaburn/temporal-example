@@ -1,0 +1,19 @@
+meta {
+  name: Create User
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/v1/generate
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "firstName": "Craig",
+    "lastName": "Moynes",
+    "createdOn": "2024-11-23T21:04:00.00Z"
+  }
+}

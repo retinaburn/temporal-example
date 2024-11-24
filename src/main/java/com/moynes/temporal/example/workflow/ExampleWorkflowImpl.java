@@ -3,6 +3,7 @@ package com.moynes.temporal.example.workflow;
 import java.time.Duration;
 
 import com.moynes.temporal.example.activity.ExampleActivity;
+import com.moynes.temporal.example.model.User;
 
 import io.temporal.activity.ActivityOptions;
 import io.temporal.spring.boot.WorkflowImpl;
@@ -19,7 +20,7 @@ public class ExampleWorkflowImpl implements ExampleWorkflow {
         .build();
 
     @Override
-    public void launchWorkflow() {
+    public void launchWorkflow(User user) {
         log.info("Workflow started");
     
         ExampleActivity activity = Workflow.newActivityStub(ExampleActivity.class, activityOptions);
