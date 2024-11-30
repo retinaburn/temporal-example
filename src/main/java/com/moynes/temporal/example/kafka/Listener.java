@@ -33,11 +33,11 @@ public class Listener {
         // Service
         WorkflowClient client = WorkflowClient.newInstance(serviceStub);
 
-        ExampleWorkflow workflow = client.newWorkflowStub(ExampleWorkflow.class, WorkflowOptions.newBuilder()
-                .setTaskQueue("TaskQueue")
-                .setWorkflowId(record.topic()+"-"+
-                record.partition()+":"+record.offset())
-                .build());
+        ExampleWorkflow workflow = client.newWorkflowStub(ExampleWorkflow.class,
+                WorkflowOptions.newBuilder()
+                        .setTaskQueue("TaskQueue")
+                        .setWorkflowId(String.format("%s-%d:%d", record.topic(), record.partition(), record.offset()))
+                        .build());
 
         // use WorkflowClient.execute to return future that contains Workflow result or
         // failure, or
